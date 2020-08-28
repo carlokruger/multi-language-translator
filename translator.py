@@ -11,8 +11,6 @@ if language == "fr":
 elif language == "en":
     url = 'https://context.reverso.net/translation/french-english/' + text
 
-print(url)
-
 user_agent = 'Mozilla/5.0'
 
 site = requests.get(url, headers={'User-Agent': user_agent})
@@ -29,7 +27,26 @@ examples_section = soup.find('section', {'id': 'examples-content'})
 example_spans = examples_section.find_all('span', {'class': 'text'})
 example_texts = [span.text.strip() for span in example_spans]
 
-print('Translations')
-print(translated_words)
-print(example_texts)
+print('Context examples:')
+
+if language == "fr":
+    print("French Translations:")
+elif language == "en":
+    print("English Translations:")
+
+for word in translated_words:
+    print(word)
+
+if language == "fr":
+    print("French Examples:")
+elif language == "en":
+    print("English Examples:")
+
+
+for index, phrase in enumerate(example_texts):
+    if index % 2 == 0:
+        print(phrase + ":")
+    else:
+        print(phrase + ":")
+        print()
 
