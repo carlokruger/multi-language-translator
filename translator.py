@@ -1,21 +1,36 @@
 from bs4 import BeautifulSoup
 import requests
 
-language = input('Type "en" if you want to translate from French into English, or "fr" if you want to translate from English into French:')
+print('''Hello, you're welcome to the translator. Translator supports: 
+1. Arabic
+2. German
+3. English
+4. Spanish
+5. French
+6. Hebrew
+7. Japanese
+8. Dutch
+9. Polish
+10. Portuguese
+11. Romanian
+12. Russian
+13. Turkish''')
+
+languages = ["arabic", "german", "english", "spanish", "french", "hebrew", "japanese",
+             "dutch", "polish", "portuguese", "romanian", "russian", "turkish"]
+
+input_language = int(input('Type the number of your language:')) - 1
+output_language = int(input("Type the number of language you want to translate to:")) - 1
 text = input('Type the word you want to translate:')
 
-print('You chose "{}" as the language to translate "{}" to.'.format(language, text))
+i_lang = languages[input_language]
+o_lang = languages[output_language]
 
-if language == "fr":
-    url = 'https://context.reverso.net/translation/english-french/' + text
-elif language == "en":
-    url = 'https://context.reverso.net/translation/french-english/' + text
+url = 'https://context.reverso.net/translation/' + i_lang + "-" + o_lang + "/" + text
 
 user_agent = 'Mozilla/5.0'
 
 site = requests.get(url, headers={'User-Agent': user_agent})
-
-print(site.status_code, "OK")
 
 soup = BeautifulSoup(site.content, 'html.parser')
 
@@ -27,26 +42,16 @@ examples_section = soup.find('section', {'id': 'examples-content'})
 example_spans = examples_section.find_all('span', {'class': 'text'})
 example_texts = [span.text.strip() for span in example_spans]
 
-print('Context examples:')
-
-if language == "fr":
-    print("French Translations:")
-elif language == "en":
-    print("English Translations:")
-
+print(o_lang.title(), "Translations:")
 for word in translated_words:
     print(word)
 
-if language == "fr":
-    print("French Examples:")
-elif language == "en":
-    print("English Examples:")
+print()
 
-
+print(o_lang.title(), "Examples")
 for index, phrase in enumerate(example_texts):
     if index % 2 == 0:
         print(phrase + ":")
     else:
         print(phrase + ":")
         print()
-
