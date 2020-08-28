@@ -83,7 +83,9 @@ The main question is how to get these exact data from the web page without every
 Keyboard: Ctrl + Shift + I, except
 
 Internet Explorer and Edge: F12
+
 macOS: ⌘ + ⌥ + I
+
 Menu bar:
 
 Firefox: Menu ➤ Web Developer ➤ Toggle Tools, or Tools ➤ Web Developer ➤ Toggle Tools
