@@ -113,3 +113,63 @@ You chose "fr" as a language to translate "hello".
 ['Well, hello, freedom fighters.', 'Et bien, bonjour combattants de la liberté.', 'Goodbye England and hello the Netherlands...', "Au revoir l'Angleterre et bonjour les Pays-Bas...", 'Yes, hello. Jackson speaking.', "Oui, allô, Jackson à l'appareil.", 'Hello, hello, hello, hello.', 'Allô, allô, allô, allô.', 'And began appearing hello kitty games online.', 'Et a commencé à apparaître bonjour Kitty jeux en ligne.', 'Tell him hello... and congratulations.', 'Je lui dis bonjour et je le félicite.', 'A special hello to everyone from YouTube Bibi.', 'Un bonjour spécial à tout le monde de la chaîne de beauté YouTube de bibi.', 'Yes, hello, Mr Teodoresco.', 'Oui, bonjour, M. Teodoresco.', 'Well hello, Milan and Eve.', 'Eh bien bonjour, Milan et Eve.', 'Well hello, welcome to the Tree House pond.', "Alors bonjour, bienvenue à l'étang de la Maison de l'arbre.", 'pink hello kitty seat 2,3 - Auto Outlet', 'rose bonjour 2,3 siège de minou - Auto Outlet', 'hello world PL/SQL procedure successfully completed. SQL', 'bonjour procédure monde PL / SQL terminée avec succès. SQL', '"Maido-san" means something like "hello" in Kanazawa dialect.', 'Maido-sans veut dire quelque chose comme bonjour dans le dialecte de Kanazawa.', 'So anyway, hello and goodbye.', 'Donc voilà, bonjour et au revoir.', 'You can hardly hear him saying hello.', "On l'entend à peine dire bonjour.", "Yes, hello. I'd like to blackmail the Prime Minister.", "Oui, bonjour, j'aimerais faire chanter le premier Ministre.", 'Well, please tell her hello for us.', 'Bien, dites lui bonjour de notre part.', 'Homie, I think someone is saying hello.', "Homer, je crois qu'on te dit bonjour.", 'Well, hello, Susan and welcome.', 'Bien, bonjour Susan et bienvenue.', 'Normally, one says "hello" only once.', 'Normalement, on dit bonjour une fois.']
 
 Here you can see the results that are almost readable, but there’s a lot of quotes and commas. They came from the web page you received with requests. The next stage is all about the presentation!
+
+## Stage 3/7: Translations
+### Description
+To get readable results, you need to format all the data you get from the web. Good thing that Python is a rich programming language with a powerful text formatting out of the box!
+
+Use Python’s built-in text formatting to:
+
+  * Remove all the quotation marks and commas
+  * Place each word and example sentence in a new line
+  * You might also want to cut the results to 5 words and 5 example sentences to keep it compact
+
+### Example
+
+Type "en" if you want to translate from French into English, or "fr" if you want to translate from English into French:
+
+```fr```
+
+Type the word you want to translate:
+
+```hello```
+
+You chose "fr" as a language to translate "hello".
+
+200 OK
+
+Context examples:
+
+French Translations:
+
+bonjour
+
+allô
+
+ohé
+
+coucou
+
+salut
+
+French Examples:
+
+Well, hello, freedom fighters.:
+
+Et bien, bonjour combattants de la liberté.
+
+Goodbye England and hello the Netherlands...:
+
+Au revoir l'Angleterre et bonjour les Pays-Bas...
+
+Yes, hello. Jackson speaking.:
+
+Oui, allô, Jackson à l'appareil.
+
+Hello, hello, hello, hello.:
+
+Allô, allô, allô, allô.
+
+And began appearing hello kitty games online.:
+
+Et a commencé à apparaître bonjour Kitty jeux en ligne.
