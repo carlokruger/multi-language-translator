@@ -27,6 +27,7 @@ with open(out_file, 'w', encoding='utf-8') as out:
         url = 'https://context.reverso.net/translation/' + i_lang + "-" + language + "/" + text
         print(url)
         site = s.get(url, headers={'User-Agent': user_agent})
+        print(site.status_code)
         soup = BeautifulSoup(site.content, 'html.parser')
 
         translations_div = soup.find('div', {'id': 'translations-content'})
