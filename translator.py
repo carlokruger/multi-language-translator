@@ -1,35 +1,22 @@
 from bs4 import BeautifulSoup
 import requests
-
-print('''Hello, you're welcome to the translator. Translator supports: 
-1. Arabic
-2. German
-3. English
-4. Spanish
-5. French
-6. Hebrew
-7. Japanese
-8. Dutch
-9. Polish
-10. Portuguese
-11. Romanian
-12. Russian
-13. Turkish''')
+import sys
 
 languages = ["arabic", "german", "english", "spanish", "french", "hebrew", "japanese",
              "dutch", "polish", "portuguese", "romanian", "russian", "turkish"]
 
-input_language = int(input('Type the number of your language:')) - 1
-output_language = int(input("Type the number of language you want to translate to:"))
-text = input('Type the word you want to translate:')
+args = sys.argv
 
-i_lang = languages[input_language]
+i_lang = args[1]
+output_language = args[2]
+text = args[3]
+o_lang = []
 
-if 1 <= output_language <= 13:
-    o_lang = languages[output_language]
-elif output_language == 0:
+if output_language != "all":
+    o_lang.append(output_language)
+elif output_language == "all":
     o_lang = languages
-    del o_lang[input_language]
+    o_lang.remove(i_lang)
 
 user_agent = 'Mozilla/5.0'
 out_file = text + ".txt"
@@ -38,6 +25,7 @@ s = requests.Session()
 with open(out_file, 'w', encoding='utf-8') as out:
     for language in o_lang:
         url = 'https://context.reverso.net/translation/' + i_lang + "-" + language + "/" + text
+        print(url)
         site = s.get(url, headers={'User-Agent': user_agent})
         soup = BeautifulSoup(site.content, 'html.parser')
 
